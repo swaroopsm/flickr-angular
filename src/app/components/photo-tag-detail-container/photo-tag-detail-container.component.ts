@@ -25,14 +25,14 @@ export class PhotoTagDetailContainerComponent implements OnInit {
     this.loadPage({
       per_page: this.perPage,
       page: this.currentPage,
-      tag: this.route.snapshot.paramMap.get('tag');
+      tag: this.route.snapshot.paramMap.get('tag'),
     });
   }
 
 
   loadPage(options) {
     this.photoService.getPhotosForTag(options)
-    .subscribe((data) => {
+    .subscribe((data: any) => {
       this.photos = data.photos.photo;
       this.totalPages = data.photos.pages;
       this.currentPage = data.photos.page;
@@ -46,7 +46,7 @@ export class PhotoTagDetailContainerComponent implements OnInit {
     this.loadPage({
       per_page: this.perPage,
       page,
-      tag: this.route.snapshot.paramMap.get('tag');
+      tag: this.route.snapshot.paramMap.get('tag'),
     });
   }
 

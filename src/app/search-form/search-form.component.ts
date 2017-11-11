@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'search-form',
@@ -12,11 +13,15 @@ export class SearchFormComponent implements OnInit {
   @Input() search;
   @Output() searchPhotoByTag = new EventEmitter<Object>();
 
-  constructor() { }
+  constructor(private alert: AlertService) { }
 
   ngOnInit() {}
 
   onSubmit() {
+    if (typeof this.search.tag === 'string' && this.search.tag.trim() === '') {
+      return this.alert.showError('Search tag cannot be empty');
+    }
+
     this.searchPhotoByTag.emit(this.search);
   }
 
