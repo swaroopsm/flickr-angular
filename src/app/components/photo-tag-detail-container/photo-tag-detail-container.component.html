@@ -1,3 +1,11 @@
-<p>
-  photo-tag-detail-container works!
-</p>
+<div>
+  <div *ngFor="let photo of photos">
+    {{photo.id}}
+  </div>
+
+  <ul>
+    <button (click)="onPaginate(currentPage - 1)">Prev</button>
+    <span>{{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="onPaginate(currentPage + 1)">Next</button>
+  </ul>
+</div>

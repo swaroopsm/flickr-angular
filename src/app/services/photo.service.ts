@@ -8,7 +8,7 @@ export class PhotoService {
 
   // TODO
   // Figure out to transform response
-  public searchByTag(params: { tags: string }) {
+  searchByTag(params: { tags: string }) {
     return this.flickr.searchPhotos({
       ...params,
       extras: 'url_q,date_upload,date_taken,owner_name',
@@ -16,4 +16,12 @@ export class PhotoService {
     });
   }
 
+  getPhotosForTag(params: { tag: string, per_page: 18, page }) {
+    return this.flickr.searchPhotos({
+      tags: params.tag,
+      per_page: params.per_page,
+      page: params.page,
+      extras: 'url_q,date_upload,date_taken,owner_name',
+    });
+  }
 }

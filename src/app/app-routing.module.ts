@@ -5,7 +5,7 @@ import { SearchContainerComponent } from './components/search-container/search-c
 
 const routes: Routes = [
   { path: '', component: SearchContainerComponent },
-  { path: 'tags/:name', component: PhotoTagDetailContainerComponent },
+  { path: 'tags/:tag', component: PhotoTagDetailContainerComponent },
 ];
 
 @NgModule({
