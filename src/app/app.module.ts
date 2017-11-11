@@ -8,11 +8,13 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { PhotoService } from './services/photo.service';
 import { FlickrService } from './services/flickr.service';
 import { SearchContainerComponent } from './components/search-container/search-container.component';
+import { PhotoTileComponent } from './components/photo-tile/photo-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
+    PhotoTileComponent,
     SearchContainerComponent,
   ],
   imports: [

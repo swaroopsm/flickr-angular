@@ -9,8 +9,8 @@ import { PhotoService } from '../services/photo.service';
 })
 
 export class SearchFormComponent implements OnInit {
-@Input() search;
-@Output() searchPhotoByTag = new EventEmitter<Object>();
+  @Input() search;
+  @Output() searchPhotoByTag = new EventEmitter<Object>();
 
   constructor() { }
 

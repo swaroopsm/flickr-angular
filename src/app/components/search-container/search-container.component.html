@@ -1,5 +1,11 @@
-<search-form
-  [search]="search"
-  (searchPhotoByTag)="searchPhotoByTag($event)"
-  >
-</search-form>
+<div>
+  <search-form
+    [search]="search"
+    (searchPhotoByTag)="searchPhotoByTag($event)"
+    >
+  </search-form>
+
+  <div>
+    <photo-tile *ngFor="let tile of photoTiles" [tile]="tile"></photo-tile>
+  </div>
+</div>
