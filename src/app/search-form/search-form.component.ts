@@ -1,22 +1,23 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
-  selector: 'app-search-form',
+  selector: 'search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.css'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class SearchFormComponent implements OnInit {
-  search = {
-    tag: '',
-  }
+@Input() search;
+@Output() searchPhotoByTag = new EventEmitter<Object>();
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSubmit() {
+    this.searchPhotoByTag.emit(this.search);
   }
 
 }
