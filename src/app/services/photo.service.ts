@@ -11,7 +11,7 @@ export class PhotoService {
   public searchByTag(params: { tags: string }) {
     return this.flickr.searchPhotos({
       ...params,
-      extras: 'url_q,date_upload,date_taken',
+      extras: 'url_q,date_upload,date_taken,owner_name',
       per_page: 1,
     });
   }

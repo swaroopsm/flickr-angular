@@ -36,6 +36,7 @@ export class SearchContainerComponent implements OnInit {
         id,
         owner,
         image_url,
+        tag: params.tag,
       }));
     })
   }
