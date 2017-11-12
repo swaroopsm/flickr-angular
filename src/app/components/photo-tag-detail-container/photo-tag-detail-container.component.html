@@ -1,11 +1,19 @@
 <div>
-  <div *ngFor="let photo of photos">
-    {{photo.id}}
+  <div class="row">
+    <div *ngFor="let photo of photos" class="col-md-3">
+      <img class="img-thumbnail" src="{{photo.url_q}}" alt="{{photo.title}}" />
+    </div>
   </div>
 
-  <ul>
-    <button (click)="onPaginate(currentPage - 1)">Prev</button>
-    <span>{{ currentPage }} of {{ totalPages }}</span>
-    <button (click)="onPaginate(currentPage + 1)">Next</button>
-  </ul>
+  <nav *ngIf="showPaginator">
+    <ul class="pagination pagination-lg">
+      <li class="page-item" (click)="onPaginate(currentPage - 1)">
+        <a class="page-link" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">{{currentPage}} of {{totalPages}}</a></li>
+      <li class="page-item" (click)="onPaginate(currentPage + 1)">
+        <a class="page-link" tabindex="-1">Next</a>
+      </li>
+    </ul>
+  </nav>
 </div>

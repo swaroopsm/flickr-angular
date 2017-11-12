@@ -3,6 +3,6 @@ export class PhotoTile {
   tag: string;
   owner: string;
   image_url: string;
-  uploaded: object;
+  datetaken: object;
   views: string;
 }

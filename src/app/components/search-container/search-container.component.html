@@ -5,7 +5,9 @@
     >
   </search-form>
 
-  <div>
-    <photo-tile *ngFor="let tile of photoTiles" [tile]="tile"></photo-tile>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let tile of photoTiles">
+      <photo-tile [tile]="tile"></photo-tile>
+    <div>
   </div>
 </div>

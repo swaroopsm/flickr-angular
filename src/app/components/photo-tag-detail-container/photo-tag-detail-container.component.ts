@@ -15,6 +15,7 @@ export class PhotoTagDetailContainerComponent implements OnInit {
   currentPage: number = 1;
   disablePrev = true;
   disableNext = true;
+  showPaginator = false;
 
   constructor(
     private photoService: PhotoService,
@@ -39,6 +40,7 @@ export class PhotoTagDetailContainerComponent implements OnInit {
 
       this.disablePrev = this.currentPage === 1;
       this.disableNext = this.currentPage === this.totalPages || this.totalPages === 1;
+      this.showPaginator = this.totalPages > 1;
     });
   }
 

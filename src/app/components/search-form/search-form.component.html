@@ -1,0 +1,12 @@
+<form class="inline" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-xs-6 col-sm-8">
+      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+        <input [(ngModel)]="search.tag" name="tag" class="form-control form-control-lg" placeholder="Search Tag" />
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+      <button type="submit" class="btn btn-lg btn-block btn-primary">Search</button>
+    </div>
+  </div>
+</form>

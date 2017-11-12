@@ -25,7 +25,7 @@ export class SearchContainerComponent implements OnInit {
       tags: params.tag,
     })
     .subscribe((data: any) => {
-      const { id, owner, url_q: image_url } = data.photos.photo[0];
+      const { id, ownername: owner, url_q: image_url, datetaken } = data.photos.photo[0];
       // Reset Search form
       this.search = {
         tag: '',
@@ -37,6 +37,7 @@ export class SearchContainerComponent implements OnInit {
         owner,
         image_url,
         tag: params.tag,
+        datetaken,
       }));
     })
   }

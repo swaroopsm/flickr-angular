@@ -1,5 +1,9 @@
 <a routerLink="/tags/{{tile.tag}}">
-  {{tile.id}}
-  <img src="{{tile.image_url}}" />
-  <hr>
+  <div class="card">
+    <img class="card-img-top" src="{{tile.image_url}}" alt="{{tile.title}}">
+    <div class="card-block">
+      <h4 class="card-title">{{tile.owner}}</h4>
+      <a href="#" class="btn btn-primary">{{ tile.datetaken | date:"MMMM d, y" }}</a>
+    </div>
+  </div>
 </a>

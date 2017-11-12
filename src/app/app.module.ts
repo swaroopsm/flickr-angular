@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { SearchFormComponent } from './search-form/search-form.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 import { PhotoService } from './services/photo.service';
 import { FlickrService } from './services/flickr.service';
 import { AlertService } from './services/alert.service';
